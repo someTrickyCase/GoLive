@@ -1,5 +1,6 @@
 import "./SetList.css";
 import Song from "../Song/Song.jsx";
+import FontSizeBar from "../FontSizeBar/FontSizeBar.jsx";
 import { useState } from "react";
 import { DATA } from "../../data/data.js";
 import {
@@ -29,6 +30,7 @@ export default function SetList({ setList, buttonBackHendler, indexGetter }) {
   });
 
   const [songs, setSongs] = useState(stateObject);
+  const [fontSizeValue, setFontSizeValue] = useState(26)
 
   const getSongPosition = (id) => songs.findIndex((song) => song.id === id);
 
@@ -83,8 +85,17 @@ export default function SetList({ setList, buttonBackHendler, indexGetter }) {
     navigator.clipboard.writeText(text)
   }
 
+  function fontSizeChanger(event) {
+    const newValue = event.target.value
+    const container = document.querySelector(".scrollable-inner")
+    console.log(newValue)
+    container.style.fontSize = `${event.target.value}px`
+    setFontSizeValue(newValue)
+  }
+
   return (
     <section className="set-list-section">
+      <FontSizeBar onChangeHandler={fontSizeChanger}/>
       <h1>Сет на сейчас💥</h1>
       <div className="scrollable-inner">
       <DndContext

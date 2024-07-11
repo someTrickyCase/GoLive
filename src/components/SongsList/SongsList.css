@@ -33,18 +33,18 @@ section {
     width: 100%;
     overflow-y: scroll;
     min-height: 90%;
+
+    font-size: 3.2rem;
 }
 
 .song-name{
     border: none;
-    height: 3.4rem;
+    height: auto;
     width: 100%;
     padding-left:4rem ;
 
     display: flex;
     align-items: center;
-
-    font-size: 3.2rem;
 }
 
 .selected-song {

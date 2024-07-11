@@ -3,6 +3,10 @@
     position: relative;
 }
 
+.pharagraph {
+    max-width: 60%;
+}
+
 .button-delete {
     height: 2.4rem;
     width: 2.4rem;

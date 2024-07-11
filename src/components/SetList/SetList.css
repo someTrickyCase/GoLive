@@ -3,6 +3,10 @@
     width: 100vw;
 }
 
+.set-list-section .song {
+    margin-left: 1rem;
+}
+
 .set-list-section h1 {
     font-size: 3rem;
     margin-top: 2rem;

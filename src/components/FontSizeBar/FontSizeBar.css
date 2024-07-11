@@ -1,0 +1,55 @@
+.font-size-bar {
+  position: absolute;
+  transform: rotate(-90deg);
+  left: -6rem;
+  top: 30rem;
+
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  height: 1px;
+
+  overflow: visible;
+  z-index: 10000;
+}
+
+.font-size-bar:focus {
+  outline: none;
+}
+
+.font-size-bar::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+  background-color: #c0c0c0;
+  border-radius: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+}
+
+.font-size-bar:focus::-webkit-slider-thumb {
+  outline: 3px solid #ffffff;
+  outline-offset: 0.125rem;
+}
+
+/* ********** Firefox styles ********** */
+/* slider track */
+/* input[type="range"]::-moz-range-track {
+  background-color: #bababa;
+  border-radius: 0.5rem;
+  height: 1px;
+} */
+
+/* slider thumb */
+/* input[type="range"]::-moz-range-thumb {
+  background-color: #808080;
+  border: none; 
+  border-radius: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+} */
+/* 
+input[type="range"]:focus::-moz-range-thumb {
+  outline: 3px solid #808080;
+  outline-offset: 0.125rem;
+} */
