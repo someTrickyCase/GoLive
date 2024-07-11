@@ -2,7 +2,7 @@ import { DATA } from "../../data/data.js";
 import { useState } from "react";
 import "./SongsList.css";
 
-export default function SongsList({ setList, indexGetter, buttonDoneHendler }) {
+export default function SongsList({ setList, indexGetter, buttonDoneHendler, buttonMenuHendler }) {
   const [isSelected, setIsSelected] = useState(false);
 
   function clickHendler(event) {
@@ -14,10 +14,6 @@ export default function SongsList({ setList, indexGetter, buttonDoneHendler }) {
       setIsSelected(true);
     }
     indexGetter(event.target.getAttribute("index"));
-  }
-
-  function buttonMenuHendler() {
-    console.log("open menu");
   }
 
   return (

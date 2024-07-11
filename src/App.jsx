@@ -1,18 +1,31 @@
 import SongsList from "./components/SongsList/SongsList.jsx";
 import SetList from "./components/SetList/SetList.jsx";
+import Menu from "./components/Menu/Menu.jsx";
 import { useState, useRef } from "react";
 import "./App.css";
 
 function App() {
-  const [isCreated, setIsCreated] = useState(false);
+  const [isMenu, setIsMenu] = useState(false);
+  const [isSetList, setIsSetList] = useState(false);
+  const [isSongList, setIsSongList] = useState(true);
   const refSetList = useRef([]);
 
-  function toSetList() {
-    setIsCreated(true);
+  function toSongsList() {
+    setIsSongList(true);
+    setIsSetList(false);
+    setIsMenu(false);
   }
 
-  function toSongsList() {
-    setIsCreated(false);
+  function toSetList() {
+    setIsSongList(false);
+    setIsSetList(true);
+    setIsMenu(false);
+  }
+
+  function toMenu() {
+    setIsSongList(false);
+    setIsSetList(false);
+    setIsMenu(true);
   }
 
   function getSongIndex(indexOfSong) {
@@ -25,25 +38,32 @@ function App() {
   }
 
   function getIndexToDelete(value) {
-    refSetList.current.splice(refSetList.current.indexOf(value), 1)
+    refSetList.current.splice(refSetList.current.indexOf(value), 1);
   }
 
-  if (!isCreated) {
+  
+
+  if (isSongList) {
     return (
       <SongsList
         setList={refSetList.current}
         indexGetter={getSongIndex}
         buttonDoneHendler={toSetList}
+        buttonMenuHendler={toMenu}
       />
     );
-  } else {
+  }
+  if (isSetList) {
     return (
       <SetList
         setList={refSetList.current}
         indexGetter={getIndexToDelete}
-        buttonBackHendler={toSongsList}
+        buttonToSongListHendler={toSongsList}
       />
     );
+  }
+  if (isMenu) {
+    return <Menu buttonToSongListHendler={toSongsList}/>;
   }
 }
 

@@ -19,7 +19,7 @@ import {
   sortableKeyboardCoordinates,
 } from "@dnd-kit/sortable";
 
-export default function SetList({ setList, buttonBackHendler, indexGetter }) {
+export default function SetList({ setList, buttonToSongListHendler, indexGetter }) {
   const stateObject = [];
 
   setList.map((index) => {
@@ -57,7 +57,6 @@ export default function SetList({ setList, buttonBackHendler, indexGetter }) {
   function buttonDeleteHendler(event) {
     const button = event.target.closest("button");
     if (!button) return;
-    console.log(button.parentElement.querySelector(".pharagraph").textContent);
     const newState = stateObject.filter(
       (element) =>
         element.title !==
@@ -81,14 +80,12 @@ export default function SetList({ setList, buttonBackHendler, indexGetter }) {
     for(let i = 0; i<songs.length; i++) {
       text += `${songs[i].textContent} \n`
     }
-    console.log(text)
     navigator.clipboard.writeText(text)
   }
 
   function fontSizeChanger(event) {
     const newValue = event.target.value
     const container = document.querySelector(".scrollable-inner")
-    console.log(newValue)
     container.style.fontSize = `${event.target.value}px`
     setFontSizeValue(newValue)
   }
@@ -115,7 +112,7 @@ export default function SetList({ setList, buttonBackHendler, indexGetter }) {
         </SortableContext>
       </DndContext>
       </div>
-      <button className="button button-back" onClick={buttonBackHendler}>
+      <button className="button button-back" onClick={buttonToSongListHendler}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
