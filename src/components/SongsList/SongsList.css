@@ -1,0 +1,78 @@
+section {
+    background-color: black;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    overflow-y: visible;
+    scroll-behavior: smooth;
+}
+
+.songs-list-section {
+    /* height: auto !important; */
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.songs-list-section h1{
+    font-size: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+
+    text-transform: uppercase;
+}
+
+.scrollable-inner {
+    width: 100%;
+    overflow-y: scroll;
+    min-height: 90%;
+}
+
+.song-name{
+    border: none;
+    height: 3.4rem;
+    width: 100%;
+    padding-left:4rem ;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 3.2rem;
+}
+
+.selected-song {
+    color: red;
+}
+
+.button {
+    position: absolute;
+
+    background: transparent;
+    color: rgb(255, 0, 0);
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 100rem;
+
+    height: 5rem;
+    width: 5rem;
+}
+
+.button-done {
+    bottom: 3rem;
+    right: 3rem;
+}
+
+.button-menu {
+    border: none;
+    height: 4rem;
+    width: 4rem;
+
+    top: 2rem;
+    left: 2rem;
+}

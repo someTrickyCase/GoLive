@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: "sofia";
+  src: url(./assets/fonts/sofia/SofiaSansCondensed-VariableFont_wght.ttf);
+}
+
+html {
+  font-size: 52.5%;
+}
+
+#root {
+  display: flex;
+  width: 200vw;
+  height: 100vh;
+}
+
+body {
+  font-family: "sofia";
+  height: 100vh;
+}

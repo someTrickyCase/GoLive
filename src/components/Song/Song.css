@@ -1,0 +1,19 @@
+.song {
+    touch-action: none;
+    position: relative;
+}
+
+.button-delete {
+    height: 2.4rem;
+    width: 2.4rem;
+    border: none;
+
+    right: 4rem;
+
+    color: rgba(167, 167, 167, 0.418)
+}
+
+.keyOf{
+    color: red;
+    font-weight: 700;
+}
