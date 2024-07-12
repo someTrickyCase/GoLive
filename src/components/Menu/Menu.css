@@ -1,31 +1,115 @@
 .menu-section {
-    height: 100vh;
-    width: 100vw;
-    background-color: black;
-    text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  text-align: center;
 }
 
-.menu-section h1{
-    font-size: 3rem;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+.menu-section h1 {
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 
-    text-transform: uppercase;
-    color: red;
+  text-transform: uppercase;
+  color: red;
 }
 
-.footer{
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
+.footer {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
 
-    font-size: 1.8rem;
-    color: rgba(255, 255, 255, 0.2);
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.2);
 }
 
 .description {
-    padding-left: 4rem;
-    padding-right: 4rem;
-    font-size: 2rem;
-    color: rgba(255, 255, 255, 0.2);
+  margin-top: 60vh;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.accordeon-container {
+  width: 100%;
+  color: white;
+}
+
+.accordeon-item {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  height: auto;
+}
+
+.accordeon-item-title {
+  display: flex;
+  height: 3.4rem;
+  border-bottom: 1px solid red;
+  padding-bottom: 1rem;
+}
+
+.accordeon-item p {
+  font-size: 3.2rem;
+  align-self: center;
+}
+
+.accordeon-container svg {
+  transform: scale(0.6) rotate(90deg);
+  margin-left: 2rem;
+}
+
+.accordeon-options {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  margin-left: 4rem;
+  width: 14rem;
+  border: 1px solid white;
+  border-radius: 4px;
+  height: 3rem;
+  padding-left: 1rem;
+
+  transition: all 0.2s linear;
+}
+
+.input:focus {
+  border: 1px solid red;
+  outline: none;
+  box-shadow: 1px 1px 4px 3px rgba(255, 255, 255, 0.089);
+}
+
+.input::placeholder {
+  font-family: "sofia";
+  font-size: 1.8rem;
+  color: rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+}
+
+.button-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  border-radius: 4px;
+  position: relative;
+  height: 3rem;
+  width: 3rem;
+  margin-left: 2.5rem;
+}
+
+.unfolded {
+  border-bottom: 1px solid red;
+}
+
+.hide {
+  display: none;
+  height: 0px;
 }

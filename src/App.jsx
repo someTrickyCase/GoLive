@@ -41,8 +41,6 @@ function App() {
     refSetList.current.splice(refSetList.current.indexOf(value), 1);
   }
 
-  
-
   if (isSongList) {
     return (
       <SongsList
