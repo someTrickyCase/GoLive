@@ -1,13 +1,17 @@
 import "./Menu.css";
-import {DATA} from "../../data/data.js"
+import { DATA } from "../../data/data.js";
 
 import { useRef, useState } from "react";
 
-export default function Menu({ buttonToSongListHendler, setList, indexGetter }) {
+export default function Menu({
+  buttonToSongListHendler,
+  setList,
+  indexGetter,
+}) {
   const [isUnfolded, setIsUnfolded] = useState(false);
   const accordeonItemTitleRef = useRef(null);
-  const titleInputRef = useRef(null)
-  const keyInputRef = useRef(null)
+  const titleInputRef = useRef(null);
+  const keyInputRef = useRef(null);
 
   function accordeonItemHendler() {
     if (isUnfolded) {
@@ -21,33 +25,33 @@ export default function Menu({ buttonToSongListHendler, setList, indexGetter }) 
   }
 
   function buttonSubmitHendler() {
-    const songName = titleInputRef.current.value
-    const keyOf = keyInputRef.current.value
-    if (typeof(songName) === "string" && typeof(keyOf) === "string") {
-      DATA.push({songName, keyOf})
+    const songName = titleInputRef.current.value;
+    const keyOf = keyInputRef.current.value;
+    if (typeof songName === "string" && typeof keyOf === "string") {
+      DATA.push({ songName, keyOf });
     }
 
-    localStorage.setItem("data", JSON.stringify(DATA))
+    localStorage.setItem("data", JSON.stringify(DATA));
     setIsUnfolded(!isUnfolded);
 
-    titleInputRef.current.value = ""
-    keyInputRef.current.value = ""
+    titleInputRef.current.value = "";
+    keyInputRef.current.value = "";
   }
 
   function buttonDeleteSelectedHendler() {
-    const songs = []
-    setList.map(item => {
-      songs.push(DATA[item].songName)
-    })
-    
-    songs.map(songsItem => {
-      DATA.map(dataItem => {
-        if(songsItem === dataItem.songName) {
-          indexGetter(DATA.indexOf(dataItem))
-          DATA.splice(DATA.indexOf(dataItem), 1)
+    const songs = [];
+    setList.map((item) => {
+      songs.push(DATA[item].songName);
+    });
+
+    songs.map((songsItem) => {
+      DATA.map((dataItem) => {
+        if (songsItem === dataItem.songName) {
+          indexGetter(DATA.indexOf(dataItem));
+          DATA.splice(DATA.indexOf(dataItem), 1);
         }
-      })
-    })
+      });
+    });
   }
 
   return (
@@ -65,7 +69,7 @@ export default function Menu({ buttonToSongListHendler, setList, indexGetter }) 
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className={`${isUnfolded?"svg-rotated":undefined}`}
+              className={`${isUnfolded ? "svg-rotated" : undefined}`}
             >
               <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
             </svg>
@@ -86,16 +90,25 @@ export default function Menu({ buttonToSongListHendler, setList, indexGetter }) 
               placeholder="тональность"
               type="text"
             />
-            <button onClick={buttonSubmitHendler} className="button button-add"></button>
+            <button
+              onClick={buttonSubmitHendler}
+              className="button button-add"
+            ></button>
           </div>
         </div>
-        <button onClick={buttonDeleteSelectedHendler} className="button-delete-selected">Удалить выбранные</button>
+        <button
+          onClick={buttonDeleteSelectedHendler}
+          className="button-delete-selected"
+        >
+          Удалить выбранные
+        </button>
       </div>
       <p className="footer">@someTrickyCase</p>
       <p className="description">
-        Тут будет можно добавить свои песни (пока только название и
-        тональность). <br /> Я бы сделал это сейчас, но сон оказался
-        сильнее😴😴😴
+        Созданные тайтлы храняться в localStorage. <br /> Для обновления списка
+        (каким он был изначально), удалите все тайтлы и перезагрузите страницу.
+        Или отчистите localStorage <br />
+        😱🤯🥶
       </p>
       <button className="button button-back" onClick={buttonToSongListHendler}>
         <svg
