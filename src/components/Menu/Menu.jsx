@@ -1,8 +1,31 @@
 import "./Menu.css";
+import {DATA} from "../../data/data.js"
+
+import { useRef, useState } from "react";
 
 export default function Menu({ buttonToSongListHendler }) {
+  const [isUnfolded, setIsUnfolded] = useState(false);
+  const accordeonItemTitleRef = useRef(null);
+  const titleInputRef = useRef(null)
+  const keyInputRef = useRef(null)
+
   function accordeonItemHendler() {
-    console.log("OWO");
+    if (isUnfolded) {
+      accordeonItemTitleRef.current.classList.add("underlined");
+      setIsUnfolded(!isUnfolded);
+    }
+    if (!isUnfolded) {
+      accordeonItemTitleRef.current.classList.remove("underlined");
+      setIsUnfolded(!isUnfolded);
+    }
+  }
+
+  function buttonSubmitHendler() {
+    const songName = titleInputRef.current.value
+    const keyOf = keyInputRef.current.value
+    if (typeof(songName) === "string" && typeof(keyOf) === "string") {
+      DATA.push({songName, keyOf})
+    }
   }
 
   return (
@@ -10,29 +33,38 @@ export default function Menu({ buttonToSongListHendler }) {
       <h1>Меню</h1>
       <div className="accordeon-container">
         <div className="accordeon-item">
-          <div onClick={accordeonItemHendler} className="accordeon-item-title">
+          <div
+            ref={accordeonItemTitleRef}
+            onClick={accordeonItemHendler}
+            className="accordeon-item-title underlined"
+          >
             <svg
+              // ref={accordeonItemSvgRef}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="size-5"
+              className={`${isUnfolded?"svg-rotated":undefined}`}
             >
               <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
             </svg>
             <p>Добавить песню</p>
           </div>
-          <div className="accordeon-options hide">
+          <div
+            className={`accordeon-options ${!isUnfolded ? "hide" : undefined}`}
+          >
             <input
+              ref={titleInputRef}
               className="input input-song-name"
               placeholder="название"
               type="text"
             />
             <input
+              ref={keyInputRef}
               className="input input-song-key-of"
               placeholder="тональность"
               type="text"
             />
-            <button className="button button-add"></button>
+            <button onClick={buttonSubmitHendler} className="button button-add"></button>
           </div>
         </div>
       </div>

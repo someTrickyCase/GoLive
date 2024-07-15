@@ -24,7 +24,8 @@
 }
 
 .description {
-  margin-top: 60vh;
+  position: absolute;
+  top: 80vh;
   padding-left: 4rem;
   padding-right: 4rem;
   font-size: 2rem;
@@ -46,8 +47,8 @@
 .accordeon-item-title {
   display: flex;
   height: 3.4rem;
-  border-bottom: 1px solid red;
   padding-bottom: 1rem;
+  transition: all 0.5s ease;
 }
 
 .accordeon-item p {
@@ -58,6 +59,16 @@
 .accordeon-container svg {
   transform: scale(0.6) rotate(90deg);
   margin-left: 2rem;
+  transition: all 0.2s ease;
+}
+
+.underlined {
+  border-bottom: 1px solid red;
+  transition: all 0.5s ease;
+}
+
+.svg-rotated {
+  transform: scale(0.6) rotate(-90deg) !important;
 }
 
 .accordeon-options {
@@ -66,6 +77,8 @@
   height: auto;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid red;
+  transition: all 0.2s ease;
 }
 
 .input {
@@ -105,12 +118,7 @@
   margin-left: 2.5rem;
 }
 
-.unfolded {
-  border-bottom: 1px solid red;
-}
-
 .hide {
-  display: none;
-  height: 0px;
+  transform:translateY(-50%) scaleY(0) !important;
+  opacity: 1 !important;
 }
- /* sdfsdf */
