@@ -1,6 +1,6 @@
 let DATA = [];
 
-if (localStorage.getItem("data")) {
+if (localStorage.getItem("data") && localStorage.length > 1) {
   DATA = JSON.parse(localStorage.getItem("data"));
 } else {
   DATA = [

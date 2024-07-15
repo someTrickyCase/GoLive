@@ -3,7 +3,7 @@ import {DATA} from "../../data/data.js"
 
 import { useRef, useState } from "react";
 
-export default function Menu({ buttonToSongListHendler }) {
+export default function Menu({ buttonToSongListHendler, setList, indexGetter }) {
   const [isUnfolded, setIsUnfolded] = useState(false);
   const accordeonItemTitleRef = useRef(null);
   const titleInputRef = useRef(null)
@@ -32,6 +32,22 @@ export default function Menu({ buttonToSongListHendler }) {
 
     titleInputRef.current.value = ""
     keyInputRef.current.value = ""
+  }
+
+  function buttonDeleteSelectedHendler() {
+    const songs = []
+    setList.map(item => {
+      songs.push(DATA[item].songName)
+    })
+    
+    songs.map(songsItem => {
+      DATA.map(dataItem => {
+        if(songsItem === dataItem.songName) {
+          indexGetter(DATA.indexOf(dataItem))
+          DATA.splice(DATA.indexOf(dataItem), 1)
+        }
+      })
+    })
   }
 
   return (
@@ -73,6 +89,7 @@ export default function Menu({ buttonToSongListHendler }) {
             <button onClick={buttonSubmitHendler} className="button button-add"></button>
           </div>
         </div>
+        <button onClick={buttonDeleteSelectedHendler} className="button-delete-selected">Удалить выбранные</button>
       </div>
       <p className="footer">@someTrickyCase</p>
       <p className="description">

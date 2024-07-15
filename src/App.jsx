@@ -61,7 +61,13 @@ function App() {
     );
   }
   if (isMenu) {
-    return <Menu buttonToSongListHendler={toSongsList}/>;
+    return (
+      <Menu
+        setList={refSetList.current}
+        indexGetter={getIndexToDelete}
+        buttonToSongListHendler={toSongsList}
+      />
+    );
   }
 }
 

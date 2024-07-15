@@ -35,13 +35,15 @@
 .accordeon-container {
   width: 100%;
   color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .accordeon-item {
   display: flex;
   flex-direction: column;
-  padding-bottom: 1rem;
-  height: auto;
+  /* padding-bottom: 1rem; */
+  /* height: auto; */
 }
 
 .accordeon-item-title {
@@ -121,4 +123,20 @@
 .hide {
   transform:translateY(-50%) scaleY(0) !important;
   opacity: 1 !important;
+}
+
+.button-delete-selected {
+  position: absolute;
+  top: 70vh;
+  width: 90vw;
+  height: 5rem;
+  margin-left: 5vw;
+
+  background: transparent;
+  border: 1px solid red;
+  border-radius: 10px;
+
+  font-size: 3.2rem;
+  color: red;
+  font-family: "sofia";
 }
