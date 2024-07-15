@@ -1,51 +1,56 @@
-const DATA = [
-  { songName: "Люби меня люби", keyOf: "F" },
+let DATA = [];
 
-  { songName: "Любочка", keyOf: "G" },
+if (localStorage.getItem("data")) {
+  DATA = JSON.parse(localStorage.getItem("data"));
+} else {
+  DATA = [
+    { songName: "Люби меня люби", keyOf: "F" },
 
-  { songName: "Скулицы", keyOf: "E" },
+    { songName: "Любочка", keyOf: "G" },
 
-  { songName: "Яхта", keyOf: "Am" },
+    { songName: "Скулицы", keyOf: "E" },
 
-  { songName: "Ромашки", keyOf: "Dm" },
+    { songName: "Яхта", keyOf: "Am" },
 
-  { songName: "МНЛ", keyOf: "Dm" },
+    { songName: "Ромашки", keyOf: "Dm" },
 
-  { songName: "Голая", keyOf: "Am" },
+    { songName: "МНЛ", keyOf: "Dm" },
 
-  { songName: "Седьмой лепесток", keyOf: "Ebm" },
+    { songName: "Голая", keyOf: "Am" },
 
-  { songName: "Нбвш", keyOf: "D#" },
+    { songName: "Седьмой лепесток", keyOf: "Ebm" },
 
-  { songName: "Хоп-хей", keyOf: "Am" },
+    { songName: "Нбвш", keyOf: "D#" },
 
-  { songName: "Медведица", keyOf: "Em" },
+    { songName: "Хоп-хей", keyOf: "Am" },
 
-  { songName: "Поппури", keyOf: "D" },
+    { songName: "Медведица", keyOf: "Em" },
 
-  { songName: "Лесник", keyOf: "Am" },
+    { songName: "Поппури", keyOf: "D" },
 
-  { songName: "Ручки", keyOf: "E" },
+    { songName: "Лесник", keyOf: "Am" },
 
-  { songName: "Максим", keyOf: "Bm" },
+    { songName: "Ручки", keyOf: "E" },
 
-  { songName: "ХГЕА", keyOf: "Bm" },
+    { songName: "Максим", keyOf: "Bm" },
 
-  { songName: "Царица", keyOf: "F#m" },
+    { songName: "ХГЕА", keyOf: "Bm" },
 
-  { songName: "Птсл", keyOf: "Am" },
+    { songName: "Царица", keyOf: "F#m" },
 
-  { songName: "Куколд", keyOf: "C#m" },
+    { songName: "Птсл", keyOf: "Am" },
 
-  { songName: "ВВВ", keyOf: "Cm" },
+    { songName: "Куколд", keyOf: "C#m" },
 
-  { songName: "Тулула", keyOf: "Cm" },
+    { songName: "ВВВ", keyOf: "Cm" },
 
-  { songName: "ХалиГали", keyOf: "Bm" },
+    { songName: "Тулула", keyOf: "Cm" },
 
-  { songName: "Мухожук", keyOf: "Am" },
+    { songName: "ХалиГали", keyOf: "Bm" },
 
-  { songName: "Аккумулятор", keyOf: "Bm" },
-];
+    { songName: "Мухожук", keyOf: "Am" },
 
+    { songName: "Аккумулятор", keyOf: "Bm" },
+  ];
+}
 export { DATA };

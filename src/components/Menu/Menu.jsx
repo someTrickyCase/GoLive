@@ -26,6 +26,12 @@ export default function Menu({ buttonToSongListHendler }) {
     if (typeof(songName) === "string" && typeof(keyOf) === "string") {
       DATA.push({songName, keyOf})
     }
+
+    localStorage.setItem("data", JSON.stringify(DATA))
+    setIsUnfolded(!isUnfolded);
+
+    titleInputRef.current.value = ""
+    keyInputRef.current.value = ""
   }
 
   return (
