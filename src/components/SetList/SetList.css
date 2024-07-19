@@ -5,6 +5,7 @@
 
 .set-list-section .song {
     margin-left: 1rem;
+    height: auto !important;
 }
 
 .set-list-section h1 {

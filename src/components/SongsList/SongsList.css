@@ -25,7 +25,8 @@ section {
 .songs-list-section h1{
     font-size: 3rem;
     margin-top: 2rem;
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
+    height: 10rem;
 
     text-transform: uppercase;
 }
@@ -36,6 +37,7 @@ section {
     width: 100%;
     height: auto;
     overflow-y: scroll;
+    /* transform: translateY(2rem); */
 
     font-size: 3.2rem;
 }
