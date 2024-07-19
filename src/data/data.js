@@ -68,6 +68,11 @@ if (localStorage.getItem("data") && localStorage.length > 1) {
     { songName: "I Wanna Be Your Slave", keyOf: "C#m" },
     { songName: "Sunny", keyOf: "Bm" },
     { songName: "Song 2", keyOf: "" },
+    { songName: "Song 2", keyOf: "" },
+    { songName: "", keyOf: "" },
+    { songName: "", keyOf: "" },
+    { songName: "", keyOf: "" },
+    { songName: "", keyOf: "" },
   ];
 }
 export { DATA };
