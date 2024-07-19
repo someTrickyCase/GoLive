@@ -12,13 +12,14 @@ section {
 }
 
 .songs-list-section {
-    /* height: auto !important; */
+    height: auto;
     width: 100vw;
 
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    /* overflow-y: scroll; */
 }
 
 .songs-list-section h1{
@@ -30,16 +31,18 @@ section {
 }
 
 .scrollable-inner {
+    /* position: absolute; */
+    /* top: 7rem; */
     width: 100%;
-    overflow-y: scroll;
     height: auto;
+    overflow-y: scroll;
 
     font-size: 3.2rem;
 }
 
 .song-name{
     border: none;
-    height: auto;
+    height: 3.6rem;
     width: 100%;
     padding-left:4rem ;
 

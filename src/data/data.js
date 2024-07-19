@@ -51,6 +51,23 @@ if (localStorage.getItem("data") && localStorage.length > 1) {
     { songName: "Мухожук", keyOf: "Am" },
 
     { songName: "Аккумулятор", keyOf: "Bm" },
+    { songName: "Белые розы", keyOf: "Am" },
+    { songName: "Летящей походкой", keyOf: "Dm" },
+    { songName: "Видели Ночь", keyOf: "" },
+    { songName: "Танцуй", keyOf: "Gm" },
+    { songName: "Ресницы", keyOf: "F#m" },
+    { songName: "ПТСЛ", keyOf: "Am" },
+    { songName: "Мое сердце", keyOf: "D" },
+    { songName: "Нон стоп", keyOf: "C#m" },
+    { songName: "Медлячок", keyOf: "Bm" },
+    { songName: "Юность", keyOf: "Fm" },
+    { songName: "Максим", keyOf: "Bm" },
+    { songName: "Ром", keyOf: "Cm" },
+    { songName: "Салют Вера", keyOf: "Abm" },
+    { songName: "Ночь", keyOf: "Dm" },
+    { songName: "I Wanna Be Your Slave", keyOf: "C#m" },
+    { songName: "Sunny", keyOf: "Bm" },
+    { songName: "Song 2", keyOf: "" },
   ];
 }
 export { DATA };
