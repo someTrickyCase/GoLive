@@ -1,83 +1,83 @@
 section {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
 
-    overflow-y: visible;
-    scroll-behavior: smooth;
+  overflow-y: visible;
+  scroll-behavior: smooth;
 }
 
 .songs-list-section {
-    height: auto;
-    width: 100vw;
+  height: auto;
+  width: 100vw;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    /* overflow-y: scroll; */
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  /* overflow-y: scroll; */
 }
 
-.songs-list-section h1{
-    font-size: 3rem;
-    margin-top: 2rem;
-    /* margin-bottom: 3rem; */
-    height: 10rem;
+.songs-list-section h1 {
+  font-size: 3rem;
+  margin-top: 2rem;
+  /* margin-bottom: 3rem; */
+  height: 10rem;
 
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .scrollable-inner {
-    /* position: absolute; */
-    /* top: 7rem; */
-    width: 100%;
-    height: auto;
-    overflow-y: scroll;
-    /* transform: translateY(2rem); */
+  /* position: absolute; */
+  /* top: 7rem; */
+  width: 100%;
+  height: auto;
+  overflow-y: scroll;
+  /* transform: translateY(2rem); */
 
-    font-size: 3.2rem;
+  font-size: 3.2rem;
 }
 
-.song-name{
-    border: none;
-    height: 3.6rem;
-    width: 100%;
-    padding-left:4rem ;
+.song-name {
+  border: none;
+  height: 3.6rem;
+  width: 100%;
+  padding-left: 4rem;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .selected-song {
-    color: red;
+  color: red;
 }
 
 .button {
-    position: absolute;
+  position: absolute;
 
-    background: transparent;
-    color: rgb(255, 0, 0);
-    border: 2px solid rgb(255, 0, 0);
-    border-radius: 100rem;
+  background: transparent;
+  color: rgb(255, 0, 0);
+  border: 2px solid rgb(255, 0, 0);
+  border-radius: 100rem;
 
-    height: 5rem;
-    width: 5rem;
+  height: 5rem;
+  width: 5rem;
 }
 
 .button-done {
-    bottom: 3rem;
-    right: 3rem;
+  bottom: 3rem;
+  right: 3rem;
 }
 
 .button-menu {
-    border: none;
-    height: 4rem;
-    width: 4rem;
+  border: none;
+  height: 4rem;
+  width: 4rem;
 
-    top: 2rem;
-    left: 2rem;
+  top: 2rem;
+  left: 2rem;
 }

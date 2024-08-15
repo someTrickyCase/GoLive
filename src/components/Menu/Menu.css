@@ -74,22 +74,31 @@
 }
 
 .accordeon-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  height: auto;
+
   padding-top: 1rem;
   padding-bottom: 1rem;
-  height: auto;
-  display: flex;
   align-items: center;
   border-bottom: 1px solid red;
   transition: all 0.2s ease;
 }
 
 .input {
-  margin-left: 4rem;
-  width: 14rem;
+  align-self: center;
+  justify-self: center;
+  height: 3.6rem;
+
   border: 1px solid white;
   border-radius: 4px;
-  height: 3rem;
   padding-left: 1rem;
+
+  font-family: "sofia";
+  font-size: 1.8rem;
+  color: #3d3d3d;
+  font-weight: 600;
 
   transition: all 0.2s linear;
 }
@@ -107,21 +116,51 @@
   font-weight: 500;
 }
 
+.input-song-name {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.input-song-key-of {
+  grid-row: 1;
+  grid-column: 2;
+}
+
 .button-add {
+  position: relative;
+  height: 4rem;
+  width: 92%;
+
+  margin-top: 0.6rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 
+  justify-self: center;
+  align-self: center;
+
+  border: 1px solid red;
   border-radius: 4px;
-  position: relative;
-  height: 3rem;
-  width: 3rem;
-  margin-left: 2.5rem;
+
+  grid-row: 2;
+  grid-column: 1/-1;
+
+  font-family: "sofia";
+  font-size: 3.2rem;
+  color: red;
+  font-weight: 400;
+
+  transition: all 0.2s linear;
+}
+
+.button-add:active {
+  background: red;
+  color: black;
 }
 
 .hide {
-  transform:translateY(-50%) scaleY(0) !important;
+  transform: translateY(-50%) scaleY(0) !important;
   opacity: 1 !important;
 }
 
@@ -139,4 +178,11 @@
   font-size: 3.2rem;
   color: red;
   font-family: "sofia";
+
+  transition: all 0.2s linear;
+}
+
+.button-delete-selected:active {
+  background: red;
+  color: black;
 }

@@ -4,7 +4,11 @@ if (localStorage.getItem("data") && localStorage.length > 1) {
   DATA = JSON.parse(localStorage.getItem("data"));
 } else {
   DATA = [
-    { songName: "Люби меня люби", keyOf: "F" },
+    {
+      songName: "Люби меня люби",
+      keyOf: "F",
+      additionalInfo: "asdaslkasldkjaslkdjalksdjlkjlaskjdlaksjdlaksjdlkajslkdj",
+    },
 
     { songName: "Любочка", keyOf: "G" },
 
@@ -68,11 +72,6 @@ if (localStorage.getItem("data") && localStorage.length > 1) {
     { songName: "I Wanna Be Your Slave", keyOf: "C#m" },
     { songName: "Sunny", keyOf: "Bm" },
     { songName: "Song 2", keyOf: "" },
-    { songName: "Song 2", keyOf: "" },
-    { songName: "", keyOf: "" },
-    { songName: "", keyOf: "" },
-    { songName: "", keyOf: "" },
-    { songName: "", keyOf: "" },
   ];
 }
 export { DATA };
