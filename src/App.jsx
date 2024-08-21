@@ -56,6 +56,14 @@ function App() {
     refSetList.current.splice(refSetList.current.indexOf(value), 1);
   }
 
+  function setListUpdater(newSetList) {
+    const newOrder = [];
+    newSetList.map((item) => {
+      newOrder.push(item.id - 1);
+    });
+    refSetList.current = newOrder;
+  }
+
   // RENDER
 
   if (isSongList) {
@@ -71,6 +79,7 @@ function App() {
   if (isSetList) {
     return (
       <SetList
+        updateSetList={setListUpdater}
         setList={refSetList.current}
         indexGetter={getIndexToDelete}
         buttonToSongListHendler={toSongsList}

@@ -4,49 +4,37 @@ section {
 
   display: flex;
   flex-direction: column;
-  justify-content: start;
   align-items: center;
-
-  overflow-y: visible;
-  scroll-behavior: smooth;
 }
 
 .songs-list-section {
-  height: auto;
+  height: 100vh;
   width: 100vw;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  /* overflow-y: scroll; */
 }
 
 .songs-list-section h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: 3rem;
-  margin-top: 2rem;
-  /* margin-bottom: 3rem; */
-  height: 10rem;
+  height: 8vh;
 
   text-transform: uppercase;
 }
 
 .scrollable-inner {
-  /* position: absolute; */
-  /* top: 7rem; */
   width: 100%;
-  height: auto;
-  overflow-y: scroll;
-  /* transform: translateY(2rem); */
+  height: 85vh;
 
+  overflow-y: scroll;
   font-size: 3.2rem;
 }
 
 .song-name {
-  border: none;
   height: 3.6rem;
   width: 100%;
-  padding-left: 4rem;
+  padding-left: 2rem;
 
   display: flex;
   align-items: center;

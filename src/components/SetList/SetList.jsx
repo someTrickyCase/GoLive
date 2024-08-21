@@ -21,6 +21,7 @@ import {
 
 export default function SetList({
   setList,
+  updateSetList,
   buttonToSongListHendler,
   buttonToSongInfoHandler,
   indexGetter,
@@ -40,6 +41,8 @@ export default function SetList({
   const getSongPosition = (id) => songs.findIndex((song) => song.id === id);
 
   function dragEndHendler(event) {
+    if (event.activatorEvent.srcElement.closest("button")) return;
+
     const { active, over } = event;
     if (active.id === over.id) return;
 
@@ -47,6 +50,7 @@ export default function SetList({
       const originPosition = getSongPosition(active.id);
       const newPosition = getSongPosition(over.id);
 
+      updateSetList(arrayMove(songs, originPosition, newPosition));
       return arrayMove(songs, originPosition, newPosition);
     });
   }
@@ -62,10 +66,9 @@ export default function SetList({
   function buttonDeleteHendler(event) {
     const button = event.target.closest("button");
     if (!button) return;
-    const newState = stateObject.filter(
-      (element) => element.title !== button.parentElement.querySelector(".pharagraph").textContent
-    );
-    setSongs(newState);
+
+    const title = button.parentElement.children[0].textContent;
+    setSongs((prev) => prev.filter((item) => item.title !== title));
 
     DATA.map((item) => {
       if (item.songName === button.parentElement.querySelector(".pharagraph").textContent) {
