@@ -97,6 +97,27 @@ export default function SetList({
     setFontSizeValue(newValue);
   }
 
+  let tick;
+  const click = new Audio();
+  click.src = "public/click.wav";
+
+  function metronome() {
+    click.play();
+  }
+
+  function handleMetronome(id, isActive) {
+    if (DATA[id--].tempo) return;
+    const timeDelta = 60 / DATA[id--].tempo;
+    if (isActive) {
+      clearInterval(tick);
+      tick = null;
+    } else {
+      tick = setInterval(() => {
+        metronome();
+      }, timeDelta * 1000);
+    }
+  }
+
   return (
     <section className='set-list-section'>
       <FontSizeBar onChangeHandler={fontSizeChanger} />
@@ -114,6 +135,7 @@ export default function SetList({
                 title={song.title}
                 buttonDeleteHendler={buttonDeleteHendler}
                 buttonShowAddInfoHandler={buttonShowAddInfoHandler}
+                buttonMetronomeHandler={handleMetronome}
               />
             ))}
           </SortableContext>

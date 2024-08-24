@@ -8,6 +8,7 @@ if (localStorage.getItem("data") && localStorage.length > 1) {
       songName: "Люби меня люби",
       keyOf: "F",
       additionalInfo: "asdaslkasldkjaslkdjalksdjlkjlaskjdlaksjdlaksjdlkajslkdj",
+      tempo: 123,
     },
 
     { songName: "Любочка", keyOf: "G" },

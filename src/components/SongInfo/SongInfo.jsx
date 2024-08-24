@@ -6,6 +6,13 @@ export default function SongInfo({ buttonToSetListHendler, refID }) {
   const textareaRef = useRef(null);
   const title = DATA[refID - 1].songName;
   const keyOf = DATA[refID - 1].keyOf;
+  const tempo = DATA[refID - 1].tempo ? DATA[refID - 1].tempo : undefined;
+  const refTempoInput = useRef(null);
+
+  function inputTempo() {
+    DATA[refID - 1].tempo = refTempoInput.current.value;
+    console.log(DATA[refID - 1].tempo);
+  }
 
   function changeInfo() {
     DATA[refID - 1].additionalInfo = textareaRef.current.value;
@@ -17,6 +24,15 @@ export default function SongInfo({ buttonToSetListHendler, refID }) {
         {title}
         <span> {keyOf}</span>
       </h1>
+      <p className='tempo'>
+        <input
+          ref={refTempoInput}
+          defaultValue={tempo}
+          onInput={inputTempo}
+          type='number'
+          className='input input-tempo'></input>{" "}
+        bpm
+      </p>
       <textarea
         ref={textareaRef}
         onInput={changeInfo}
