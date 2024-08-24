@@ -11,7 +11,6 @@ export default function SongInfo({ buttonToSetListHendler, refID }) {
 
   function inputTempo() {
     DATA[refID - 1].tempo = refTempoInput.current.value;
-    console.log(DATA[refID - 1].tempo);
   }
 
   function changeInfo() {
@@ -24,15 +23,16 @@ export default function SongInfo({ buttonToSetListHendler, refID }) {
         {title}
         <span> {keyOf}</span>
       </h1>
-      <p className='tempo'>
-        <input
-          ref={refTempoInput}
-          defaultValue={tempo}
-          onInput={inputTempo}
-          type='number'
-          className='input input-tempo'></input>{" "}
-        bpm
-      </p>
+
+      <input
+        ref={refTempoInput}
+        defaultValue={tempo}
+        onInput={inputTempo}
+        type='number'
+        className='input input-tempo'
+        placeholder='bpm'
+      />
+
       <textarea
         ref={textareaRef}
         onInput={changeInfo}

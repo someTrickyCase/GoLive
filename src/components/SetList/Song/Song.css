@@ -1,0 +1,38 @@
+.set-list-section .song {
+  cursor: grab;
+  touch-action: none;
+  position: relative;
+
+  margin-left: 4rem;
+  width: 90vw;
+}
+
+.pharagraph {
+  max-width: 60%;
+}
+
+.button-delete {
+  height: 2.4rem;
+  width: 2.4rem;
+  border: none;
+
+  right: 2rem;
+
+  color: rgba(167, 167, 167, 0.418);
+}
+
+.keyOf {
+  color: red;
+  font-weight: 700;
+}
+
+.button-show-addInfo {
+  touch-action: none;
+  height: 2.4rem;
+  width: 2.4rem;
+  border: none;
+
+  right: 4.8rem;
+
+  color: rgba(167, 167, 167, 0.418);
+}

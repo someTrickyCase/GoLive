@@ -1,0 +1,29 @@
+:root {
+  --tick: 0.2s;
+}
+
+.button-metronome {
+  height: 2.7rem;
+  width: 2.7rem;
+  border: none;
+
+  right: 7.6rem;
+
+  color: rgba(167, 167, 167, 0.418);
+  fill: rgba(167, 167, 167, 0.418);
+}
+
+@keyframes example {
+  from {
+    color: rgba(167, 167, 167, 0.418);
+    fill: rgba(167, 167, 167, 0.418);
+  }
+  to {
+    color: red;
+    fill: red;
+  }
+}
+
+.metronome-animation {
+  animation: example var(--tick) linear infinite alternate;
+}
